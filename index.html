@@ -1,7 +1,304 @@
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Site not found</title><style>:root{--colorRgbFacetsTeal600:2 128 125;--colorTealAction:var(--colorRgbFacetsTeal600);--colorRgbFacetsNeutralLight100:246 246 247;--colorRgbFacetsNeutralLight200:233 235 237;--colorHr:var(--colorRgbFacetsNeutralLight200);--colorRgbFacetsNeutralLight700:53 58 62;--colorGrayDarkest:var(--colorRgbFacetsNeutralLight700);--colorGrayLighter:var(--colorRgbFacetsNeutralLight200);--colorGrayLightest:var(--colorRgbFacetsNeutralLight100);--colorText:var(--colorGrayDarkest);--effectShadowLightShallow:0 1px 10px 0 rgb(53 58 62 / 6%),
-          0 2px 4px 0 rgb(53 58 62 / 8%);--colorRgbFacetsNeutralDark900:6 11 16;--colorStackText:rgb(var(--colorGrayDarkest));--colorCodeText:rgb(var(--colorGrayLightest));--colorRgbFacetsNeutralLight600:84 90 97;--colorGrayDarker:var(--colorRgbFacetsNeutralLight600);--colorTextMuted:var(--colorGrayDarker)}body{font-family:system-ui,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;background:#fff;overflow:hidden;margin:0;padding:0;line-height:1.5;color:rgb(var(--colorText))}@media(prefers-color-scheme:dark){body{background:rgb(var(--colorRgbFacetsNeutralDark900))}}h1{margin:0;font-size:1.375rem;line-height:1}h1+p{margin-top:8px}.main{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;width:100vw}.card{position:relative;width:75%;max-width:364px;padding:24px;background:#fff;border-radius:8px;box-shadow:var(--effectShadowLightShallow);border:1px solid rgb(var(--colorGrayLighter))}a{margin:0;font-weight:600;color:rgb(var(--colorTealAction));text-decoration-skip-ink:all;text-decoration-thickness:1px;text-underline-offset:2px;text-decoration-color:rgb(var(--colorTealAction)/.5);transition:text-decoration-color .15s ease-in-out}a:hover,a:focus-visible{text-decoration-color:rgb(var(--colorTealAction))}p:last-of-type{margin-bottom:0}hr{border:0;height:1px;background:rgb(var(--colorHr));margin-top:16px;margin-bottom:16px}.your-site{font-size:.875rem}.internal-id{font-size:.875rem;color:rgb(var(--colorTextMuted))}.inline-code{display:inline-block;background-color:var(--colorCodeText);color:var(--colorStackText);padding:4px 8px;border-radius:4px;font-size:.875rem;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,liberation mono,courier new,monospace;user-select:all}</style></head><body><div class="main"><div class="card"><h1>Site not found</h1><p>Looks like you followed a broken link or entered a URL that doesn’t
-exist on Netlify.</p><hr><p class="your-site">If this is your site, and you weren’t expecting a 404 for this path,
-please visit Netlify’s
-<a href="https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&amp;utm_campaign=community_tracking">“page not found” support guide</a>
-for troubleshooting tips.</p><p class="internal-id">Netlify Internal ID:
-<span class="inline-code request-id"><code>01K59N2PH4B48A260Q7D7XZDKQ</code></span></p></div></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hellstrap - Ultimate non-Bloxstrap Fork</title>
+  <link rel="icon" href="https://github.com/hellstrap/Hellstrap/raw/main/Images/hellstrapv2.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    /* ---------- Base ---------- */
+    :root{
+      --orange-100:#fff4d9;
+      --orange-200:#ffd166;
+      --orange-300:#ffb347;
+      --orange-400:#ff9f1c;
+      --orange-500:#ff7a00;
+      --bg-dark:#0f0f0f;
+      --glass: rgba(80,40,0,0.45);
+    }
+
+    html,body{height:100%;margin:0;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background:linear-gradient(90deg,var(--bg-dark) 0%, #2a1200 60%, var(--orange-400) 100%);color:#f3f4f6; -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+    a{color:inherit}
+
+    /* ---------- Scrollbar ---------- */
+    ::-webkit-scrollbar{width:12px}
+    ::-webkit-scrollbar-track{background:#121212}
+    ::-webkit-scrollbar-thumb{background:rgba(255,159,28,0.35);border-radius:6px;border:3px solid #121212}
+
+    /* ---------- Animated Bubbles ---------- */
+    #bubbles-container{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+    .bg-bubble{position:absolute;border-radius:999px;background:linear-gradient(135deg,rgba(255,159,28,0.12),rgba(255,183,71,0.08));box-shadow:0 0 30px rgba(255,159,28,0.15);mix-blend-mode:screen;animation:bubbleMove linear infinite;opacity:.9}
+    @keyframes bubbleMove{0%{transform:translateY(0) scale(1) rotate(0)}50%{transform:translateY(-40px) scale(1.07) rotate(4deg)}100%{transform:translateY(0) scale(1) rotate(0)}}
+
+    /* ---------- Cards & Icons ---------- */
+    .gradient-card{background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:16px;padding:1.6rem;border:1px solid rgba(255,159,28,0.12);box-shadow:0 8px 30px rgba(0,0,0,0.45);transition:transform .36s cubic-bezier(.2,.9,.2,1),box-shadow .36s, border-color .36s;will-change:transform}
+    .gradient-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 22px 48px rgba(255,159,28,0.12),0 6px 30px rgba(0,0,0,0.5);border-color:rgba(255,159,28,0.28)}
+
+    .feature-icon{width:48px;height:48px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,var(--orange-300),var(--orange-400));box-shadow:0 6px 18px rgba(255,159,28,0.18);transition:transform .28s, box-shadow .28s}
+    .feature-icon:hover{transform:rotate(14deg) scale(1.18);box-shadow:0 10px 30px rgba(255,159,28,0.3)}
+
+    /* ---------- Buttons ---------- */
+    .download-btn{background:linear-gradient(90deg,var(--orange-300),var(--orange-400));padding:.75rem 1.4rem;border-radius:12px;border:none;color:#111;font-weight:700;box-shadow:0 8px 24px rgba(255,159,28,0.22);cursor:pointer;transition:transform .28s, box-shadow .28s, filter .28s}
+    .download-btn:hover{transform:translateY(-6px) scale(1.04);box-shadow:0 20px 48px rgba(255,159,28,0.36);filter:brightness(1.02)}
+    .pulse{animation:pulseGlow 2.6s ease-in-out infinite}
+    @keyframes pulseGlow{0%{box-shadow:0 0 8px rgba(255,159,28,0.25)}50%{box-shadow:0 0 26px rgba(255,159,28,0.5)}100%{box-shadow:0 0 8px rgba(255,159,28,0.25)}}
+
+    /* ---------- Nav ---------- */
+    nav .brand{display:flex;align-items:center;gap:.75rem}
+    .brand img{height:44px;width:auto;filter:drop-shadow(0 8px 18px rgba(255,159,28,0.12))}
+    .nav-link{position:relative;padding-bottom:6px;color:rgba(255,255,255,0.9);transition:color .3s}
+    .nav-link::after{content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:0;height:2px;background:linear-gradient(90deg,var(--orange-300),var(--orange-400));border-radius:2px;transition:width .36s,left .36s}
+    .nav-link:hover{color:var(--orange-100)}
+    .nav-link:hover::after{width:100%;left:0}
+
+    /* ---------- Badges ---------- */
+    .badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .7rem;border-radius:999px;background:linear-gradient(180deg,rgba(255,183,71,0.08),rgba(255,159,28,0.04));color:var(--orange-300);border:1px solid rgba(255,159,28,0.12);font-weight:600;transition:transform .28s,box-shadow .28s}
+    .badge:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(255,159,28,0.12)}
+
+    /* ---------- FAQ ---------- */
+    .faq-item{border-bottom:1px solid rgba(255,159,28,0.06);transition:background .28s}
+    .faq-question{display:flex;align-items:center;justify-content:space-between;padding:1rem;cursor:pointer;font-weight:600;color:var(--orange-100);transition:color .28s}
+    .faq-question .sign{font-size:1.3rem;color:var(--orange-300);transition:transform .3s}
+    .faq-answer{max-height:0;overflow:hidden;padding:0 1rem;color:#e6e6e6;transition:max-height .45s cubic-bezier(.2,.8,.2,1),padding .45s}
+    .faq-item.open .faq-answer{max-height:400px;padding:0 1rem 1rem}
+    .faq-item.open .faq-question .sign{transform:rotate(180deg)}
+
+    /* ---------- Entrance / Stagger ---------- */
+    .animate-in{opacity:0;transform:translateY(14px) scale(.995);animation:enter .72s forwards cubic-bezier(.2,.9,.2,1)}
+    .animate-in[data-delay="1"]{animation-delay:.06s}
+    .animate-in[data-delay="2"]{animation-delay:.12s}
+    .animate-in[data-delay="3"]{animation-delay:.18s}
+    .animate-in[data-delay="4"]{animation-delay:.24s}
+    .animate-in[data-delay="5"]{animation-delay:.30s}
+    @keyframes enter{to{opacity:1;transform:none}}
+
+    /* ---------- Utility tweaks ---------- */
+    .centered-image{display:block;margin:0 auto;width:100%;max-width:640px;border-radius:10px;box-shadow:0 14px 36px rgba(0,0,0,0.6)}
+
+    @media (min-width:768px){.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}}
+    @media (max-width:767px){.centered-image{width:85%}}
+  </style>
+</head>
+<body>
+  <!-- Animated Background Bubbles -->
+  <div id="bubbles-container" aria-hidden="true">
+    <div class="bg-bubble" style="width:220px;height:220px;left:4%;top:68%;animation-duration:11s;opacity:.8"></div>
+    <div class="bg-bubble" style="width:160px;height:160px;left:22%;top:12%;animation-duration:9s;opacity:.7"></div>
+    <div class="bg-bubble" style="width:300px;height:300px;left:70%;top:6%;animation-duration:13s;opacity:.6"></div>
+    <div class="bg-bubble" style="width:180px;height:180px;left:85%;top:72%;animation-duration:10s;opacity:.75"></div>
+    <div class="bg-bubble" style="width:120px;height:120px;left:50%;top:45%;animation-duration:12s;opacity:.65"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="container mx-auto px-6 py-5 flex items-center justify-between">
+    <div class="brand animate-in" data-delay="1">
+      <img src="https://github.com/hellstrap/Hellstrap/raw/main/Images/hellstrapv2.png" alt="Hellstrap Logo">
+      <span class="text-2xl font-extrabold text-transparent bg-clip-text" style="background:linear-gradient(90deg,var(--orange-300),var(--orange-400))">Hellstrap</span>
+    </div>
+    <div class="hidden md:flex items-center gap-8 animate-in" data-delay="2">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#download" class="nav-link">Download</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="https://discord.gg/Vhmxr9KXQs" target="_blank" rel="noreferrer" class="nav-link flex items-center gap-2"><i class="fab fa-discord"></i>Discord</a>
+    </div>
+    <button class="md:hidden text-white p-2 ml-2 animate-in" data-delay="3" aria-label="Open menu"><i class="fas fa-bars fa-lg"></i></button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="container mx-auto px-6 py-16 text-center">
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-in" data-delay="1"> 
+      <span style="background:linear-gradient(90deg,var(--orange-300),var(--orange-400));-webkit-background-clip:text;background-clip:text;color:transparent">Hellstrap</span>
+    </h1>
+    <img src="https://hellstrap.com/images/screenshots/deployment-settings.png" alt="Hellstrap Screenshot" class="centered-image animate-in" data-delay="2" />
+
+    <p class="text-xl md:text-2xl font-medium text-gray-300 mb-4 animate-in" data-delay="3">The Ultimate Bloxstrap Fork for Roblox Optimization</p>
+    <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-400 mb-8 animate-in" data-delay="4">Unlock advanced features, seamless performance improvements, and a modern interface to enhance your Roblox experience with Hellstrap.</p>
+
+    <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-6 animate-in" data-delay="5">
+      <a href="https://github.com/Hellstrap/Hellstrap/releases" class="download-btn pulse inline-flex items-center gap-3"><i class="fas fa-download"></i><span>Download Now</span></a>
+      <a href="https://github.com/Hellstrap/Hellstrap" class="download-btn inline-flex items-center gap-3" style="background:transparent;border:1px solid rgba(255,159,28,0.14);color:var(--orange-100)"><i class="fas fa-star"></i><span>Star on GitHub</span></a>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3 text-sm animate-in" data-delay="5">
+      <a href="#" class="badge"><i class="fas fa-balance-scale"></i> MIT License</a>
+      <a href="#" class="badge"><i class="fas fa-download"></i> 3.5k Downloads</a>
+      <a href="#" class="badge"><i class="fas fa-tag"></i> v1.0.3.7 Latest</a>
+      <a href="#" class="badge"><i class="fas fa-shield-virus"></i> Verified Safe</a>
+    </div>
+  </section>
+
+  <!-- WARNING -->
+  <div class="container mx-auto max-w-4xl p-5 mb-12 rounded-md shadow-lg mx-6" style="background:linear-gradient(180deg, rgba(255,159,28,0.06), rgba(255,159,28,0.03));border-left:4px solid var(--orange-300)">
+    <div class="flex items-start gap-4">
+      <div class="text-orange-300 text-xl pt-1"><i class="fas fa-exclamation-triangle"></i></div>
+      <div>
+        <p class="text-lg font-semibold">Warning</p>
+        <p class="mt-1 text-sm leading-relaxed">The only official places to download <strong>Hellstrap</strong> are our <a href="https://github.com/Hellstrap/Hellstrap" class="underline" style="color:var(--orange-100)">GitHub</a> and our <a href="https://discord.gg/Vhmxr9KXQs" class="underline" style="color:var(--orange-100)">Discord</a>. Any other websites are unofficial.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES GRID -->
+  <section id="features" class="container mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 animate-in" data-delay="1">🚀 Key Features</h2>
+      <p class="text-lg text-orange-200 max-w-3xl mx-auto animate-in" data-delay="2">Hellstrap comes packed with powerful features to enhance your Roblox experience</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="gradient-card animate-in" data-delay="1">
+        <div class="feature-icon mb-4"><i class="fas fa-bolt"></i></div>
+        <h3 class="text-xl font-bold mb-2">Enhanced Performance</h3>
+        <p class="text-orange-200">Optimized for smooth operation with hardware acceleration toggle and improved Windows detection.</p>
+      </div>
+
+      <div class="gradient-card animate-in" data-delay="2">
+        <div class="feature-icon mb-4"><i class="fas fa-users"></i></div>
+        <h3 class="text-xl font-bold mb-2">Multi-Instance Support</h3>
+        <p class="text-orange-200">Launch multiple Roblox clients simultaneously for enhanced productivity.</p>
+      </div>
+
+      <div class="gradient-card animate-in" data-delay="3">
+        <div class="feature-icon mb-4"><i class="fas fa-exchange-alt"></i></div>
+        <h3 class="text-xl font-bold mb-2">Cross-Game Teleport</h3>
+        <p class="text-orange-200">Added option to enable cross-game teleport (fixes Error 773).</p>
+      </div>
+
+      <div class="gradient-card animate-in" data-delay="4">
+        <div class="feature-icon mb-4"><i class="fas fa-sliders-h"></i></div>
+        <h3 class="text-xl font-bold mb-2">Channels Manager</h3>
+        <p class="text-orange-200">Switch between Production, Live, and ZLive channels with ease.</p>
+      </div>
+
+      <div class="gradient-card animate-in" data-delay="5">
+        <div class="feature-icon mb-4"><i class="fas fa-paint-brush"></i></div>
+        <h3 class="text-xl font-bold mb-2">UI Improvements</h3>
+        <p class="text-orange-200">Enhanced readability, theme previews, and redesigned shortcuts.</p>
+      </div>
+
+      <div class="gradient-card animate-in" data-delay="5">
+        <div class="feature-icon mb-4"><i class="fas fa-bug"></i></div>
+        <h3 class="text-xl font-bold mb-2">Bug Fixes</h3>
+        <p class="text-orange-200">Various bug fixes &amp; updates for smoother experience with rewritten code for better stability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL FEATURES -->
+  <section class="container mx-auto px-6 py-12">
+    <div class="gradient-card p-8 animate-in" data-delay="1">
+      <h2 class="text-3xl font-bold mb-6 text-center">✨ Features & Enhancements</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 flex items-center"><span class="feature-icon w-8 h-8 mr-3"><i class="fas fa-plug"></i></span>Integrations</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start"><i class="fas fa-check text-orange-300 mr-3 mt-1"></i><span>Player Logs – Track players as they join and leave</span></li>
+            <li class="flex items-start"><i class="fas fa-check text-orange-300 mr-3 mt-1"></i><span>Message Logs – Log chat messages for monitoring</span></li>
+            <li class="flex items-start"><i class="fas fa-check text-orange-300 mr-3 mt-1"></i><span>Launch Roblox Studio – Launch Studio via Hellstrap or shortcut</span></li>
+            <li class="flex items-start"><i class="fas fa-check text-orange-300 mr-3 mt-1"></i><span>Hardware Acceleration – Disables Hardware Acceleration and UI animations</span></li>
+            <li class="flex items-start"><i class="fas fa-check text-orange-300 mr-3 mt-1"></i><span>Hellstrap Discord RPC – Shows that you're using Hellstrap on Discord (can be disabled)</span></li>
+            <li class="flex items-start"><i class="fas fa-check text-orange-300 mr-3 mt-1"></i><span>AI Chat – Chat with a built in AI all about FFlags (BETA).</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-4 flex items-center"><span class="feature-icon w-8 h-8 mr-3"><i class="fas fa-palette"></i></span>Appearance & Customization</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start"><i class="fas fa-check text-orange-300 mr-3 mt-1"></i><span>Tailored themes for a personalized launcher</span></li>
+            <li class="flex items-start"><i class="fas fa-check text-orange-300 mr-3 mt-1"></i><span>Customizable download status bar</span></li>
+            <li class="flex items-start"><i class="fas fa-check text-orange-300 mr-3 mt-1"></i><span>Theme Preview Mode – See changes before applying</span></li>
+            <li class="flex items-start"><i class="fas fa-check text-orange-300 mr-3 mt-1"></i><span>Over 10+ Themes to select from</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download" class="container mx-auto px-6 py-12 text-center">
+    <h2 class="text-4xl font-bold mb-4 animate-in" data-delay="1">🛠️ Installation Guide</h2>
+    <p class="text-xl text-orange-200 max-w-3xl mx-auto mb-8 animate-in" data-delay="2">Get started with Hellstrap in just a few simple steps</p>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+      <div class="gradient-card animate-in" data-delay="1">
+        <div class="text-3xl font-bold mb-4 text-orange-300">1</div>
+        <h3 class="text-xl font-bold mb-2">Download</h3>
+        <p class="mb-4 text-orange-200">Get the latest version from our GitHub</p>
+        <a href="https://github.com/Hellstrap/Hellstrap/releases" class="download-btn">Go to Releases</a>
+      </div>
+
+      <div class="gradient-card animate-in" data-delay="2">
+        <div class="text-3xl font-bold mb-4 text-orange-300">2</div>
+        <h3 class="text-xl font-bold mb-2">Install</h3>
+        <p class="mb-4 text-orange-200">Run the installer and follow on-screen steps</p>
+      </div>
+
+      <div class="gradient-card animate-in" data-delay="3">
+        <div class="text-3xl font-bold mb-4 text-orange-300">3</div>
+        <h3 class="text-xl font-bold mb-2">Launch</h3>
+        <p class="mb-4 text-orange-200">Open Hellstrap and configure your preferred options</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
+
+    <div class="max-w-3xl mx-auto">
+      <div class="faq-item animate-in" data-delay="1">
+        <div class="faq-question">How do I install Hellstrap?<span class="sign">+</span></div>
+        <div class="faq-answer">Download the installer from our GitHub releases, run it, and follow the installation wizard. If you run into issues, check the Discord for help.</div>
+      </div>
+
+      <div class="faq-item animate-in" data-delay="2">
+        <div class="faq-question">Is Hellstrap safe to use?<span class="sign">+</span></div>
+        <div class="faq-answer">Yes — we provide signed releases on GitHub and a verified scan. Always download only from official links.</div>
+      </div>
+
+      <div class="faq-item animate-in" data-delay="3">
+        <div class="faq-question">Can I disable updates and animations?<span class="sign">+</span></div>
+        <div class="faq-answer">Yes — there are toggles in Settings to disable automatic updates and UI animations for lower-end systems.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Community -->
+  <footer class="container mx-auto px-6 py-10 text-center">
+    <p class="text-gray-400">Join our community on <a href="https://discord.gg/Vhmxr9KXQs" style="color:var(--orange-300)">Discord</a> • Source on <a href="https://github.com/Hellstrap/Hellstrap" style="color:var(--orange-300)">GitHub</a></p>
+  </footer>
+
+  <script>
+    // FAQ accordion behavior
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const q = item.querySelector('.faq-question');
+      q.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if(!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Stagger reveal on load
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.animate-in').forEach(el => {
+        const d = el.dataset.delay || 0;
+        el.style.animationDelay = (d*0.06) + 's';
+      });
+    });
+
+    // Subtle parallax on mouse move for bubbles (lightweight)
+    const bubbles = document.getElementById('bubbles-container');
+    window.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      bubbles.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    });
+  </script>
+</body>
+</html>
